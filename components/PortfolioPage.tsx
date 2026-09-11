@@ -70,7 +70,22 @@ function ProjectVisual({ type }: { type: string }) {
     </div>
     <span>Edge signal → failure classified in 180 ms</span>
   </div>;
-  if (type === "pareto") return <div className="project-visual pareto" aria-hidden="true"><div className="grid" /><div className="points">{[[12, 77], [23, 67], [35, 57], [49, 47], [62, 37], [75, 29], [88, 22]].map(([x, y], index) => <i key={index} style={{ left: `${x}%`, top: `${y}%` }} />)}</div><span>Multi-objective Pareto front</span></div>;
+  if (type === "pareto") return <div className="project-visual pareto pareto-visual" role="img" aria-label="Animated multi-objective optimization search showing candidate designs and the Pareto frontier">
+    <div className="pareto-header" aria-hidden="true"><b>Design search</b><span>Generation 48 / 60</span></div>
+    <div className="pareto-summary" aria-hidden="true"><span><small>Population</small><b>128</b></span><span><small>Non-dominated</small><b>11</b></span><span><small>Hypervolume</small><b>0.847</b></span></div>
+    <div className="pareto-plot" aria-hidden="true">
+      <span className="pareto-y">Lower cost</span><span className="pareto-x">Higher performance</span>
+      <svg viewBox="0 0 700 220" preserveAspectRatio="none">
+        <g className="pareto-cloud">{[[65,190],[110,174],[145,185],[182,151],[212,172],[242,135],[276,156],[306,117],[338,139],[370,95],[405,119],[438,78],[470,101],[506,62],[542,82],[576,45],[608,67],[642,31],[675,49]].map(([x,y],index)=><circle key={index} cx={x} cy={y} r="4" />)}</g>
+        <path className="pareto-frontier pareto-frontier--glow" d="M66 176 C132 172 166 148 215 142 S286 118 330 111 S398 88 443 81 S514 57 556 50 S618 29 672 24" />
+        <path className="pareto-frontier" d="M66 176 C132 172 166 148 215 142 S286 118 330 111 S398 88 443 81 S514 57 556 50 S618 29 672 24" />
+        <circle className="pareto-choice" cx="443" cy="81" r="8" />
+      </svg>
+      <div className="pareto-callout"><i /> Selected compromise<strong>Design 074</strong></div>
+    </div>
+    <div className="pareto-legend" aria-hidden="true"><span><i /> Candidate designs</span><span><i /> Pareto frontier</span></div>
+    <span>Cost and performance, balanced—not averaged</span>
+  </div>;
   return <div className="project-visual map" aria-hidden="true"><div className="grid" /><div className="radar"><i /><i /><i /><b /></div><span>Five live signals · One view</span></div>;
 }
 
