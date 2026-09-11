@@ -12,7 +12,7 @@ export const portfolio = {
     phone: "+65 8791 1565",
     resumePath: "/resume.pdf",
     linkedin: "https://www.linkedin.com/in/jaychawlaosu",
-    github: "https://github.com/JayC0401",
+    github: "https://github.com/jayadityachawla04",
   },
 
   highlights: [
