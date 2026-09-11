@@ -50,7 +50,26 @@ function ProjectVisual({ type }: { type: string }) {
     <div className="procurement-feed" aria-hidden="true"><span><i /> Flagged: Plant 04 / unit-price deviation</span><strong>94% confidence</strong></div>
     <span>From eight SAP sources to four predictive models</span>
   </div>;
-  if (type === "signal") return <div className="project-visual signal" aria-hidden="true"><div className="grid" /><div className="wave">{Array.from({ length: 13 }, (_, index) => <i key={index} />)}</div><span>Live anomaly detection</span></div>;
+  if (type === "signal") return <div className="project-visual signal iot-visual" role="img" aria-label="Animated IoT monitoring pipeline detecting and classifying a sensor failure">
+    <div className="grid" aria-hidden="true" />
+    <div className="iot-header" aria-hidden="true"><b>Field monitor</b><span><i /> 24 devices online</span></div>
+    <div className="iot-pipeline" aria-hidden="true">
+      <div className="iot-node"><span>01</span><b>ESP32</b><small>Sensor edge</small></div>
+      <div className="iot-link"><i /><i /><i /></div>
+      <div className="iot-node"><span>02</span><b>MQTT</b><small>Message broker</small></div>
+      <div className="iot-link"><i /><i /><i /></div>
+      <div className="iot-node iot-node--alert"><span>03</span><b>MATLAB</b><small>State classifier</small></div>
+    </div>
+    <div className="iot-telemetry" aria-hidden="true">
+      <div className="iot-telemetry__label"><span>Motor current</span><b>2.84 A</b></div>
+      <svg viewBox="0 0 720 90" preserveAspectRatio="none">
+        <path className="iot-wave iot-wave--glow" d="M0 54 L35 51 L70 55 L105 48 L140 53 L175 49 L210 55 L245 50 L280 53 L315 48 L350 54 L385 51 L420 18 L438 78 L456 28 L478 65 L500 46 L535 52 L570 49 L605 54 L640 50 L680 53 L720 49" />
+        <path className="iot-wave" d="M0 54 L35 51 L70 55 L105 48 L140 53 L175 49 L210 55 L245 50 L280 53 L315 48 L350 54 L385 51 L420 18 L438 78 L456 28 L478 65 L500 46 L535 52 L570 49 L605 54 L640 50 L680 53 L720 49" />
+      </svg>
+      <div className="iot-event"><i /> Failure signature <strong>detected</strong><small>1.7s ago</small></div>
+    </div>
+    <span>Edge signal → failure classified in 180 ms</span>
+  </div>;
   if (type === "pareto") return <div className="project-visual pareto" aria-hidden="true"><div className="grid" /><div className="points">{[[12, 77], [23, 67], [35, 57], [49, 47], [62, 37], [75, 29], [88, 22]].map(([x, y], index) => <i key={index} style={{ left: `${x}%`, top: `${y}%` }} />)}</div><span>Multi-objective Pareto front</span></div>;
   return <div className="project-visual map" aria-hidden="true"><div className="grid" /><div className="radar"><i /><i /><i /><b /></div><span>Five live signals · One view</span></div>;
 }
