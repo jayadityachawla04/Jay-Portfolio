@@ -32,9 +32,10 @@ main::before { content:""; position:fixed; z-index:-1; inset:0; background:radia
 .hero h1 { margin:0; min-width:0; font-size:clamp(112px,16.6vw,235px); line-height:.68; letter-spacing:-.085em; font-family:Arial,Helvetica,sans-serif; font-weight:700; }
 .hero h1 span,.hero h1 em { display:block; }
 .hero h1 em { margin-left:16%; color:transparent; -webkit-text-stroke:1px rgba(241,243,239,.82); font-family:Georgia,"Times New Roman",serif; font-size:.76em; font-weight:400; line-height:.86; }
-.portrait-frame { position:relative; margin:0; align-self:center; aspect-ratio:4/3; isolation:isolate; border-radius:6px; filter:drop-shadow(0 26px 48px rgba(0,0,0,.5)); }
-.portrait-frame::before { content:""; position:absolute; z-index:-1; inset:-4px; border-radius:8px; background:linear-gradient(115deg,#173f91 0%,#78a8ff 20%,#eef5ff 28%,#245fca 37%,#071631 53%,#4d8fff 72%,#dce9ff 80%,#173f91 100%); background-size:220% 100%; box-shadow:0 0 26px rgba(77,143,255,.24); animation:portrait-edge 5.5s ease-in-out infinite; }
-.portrait-frame::after { content:""; position:absolute; z-index:-2; inset:-12px; border:1px solid rgba(128,169,255,.3); border-radius:10px; transform:translate(11px,11px); animation:portrait-offset 4.8s ease-in-out infinite; }
+.portrait-frame { position:relative; margin:0; align-self:center; aspect-ratio:4/3; isolation:isolate; border-radius:6px; filter:drop-shadow(0 26px 48px rgba(0,0,0,.5)); transform-style:preserve-3d; transition:transform .45s cubic-bezier(.2,.8,.2,1); }
+.portrait-frame::before { content:""; position:absolute; z-index:0; inset:-3px; border-radius:8px; background:linear-gradient(115deg,#173f91 0%,#78a8ff 20%,#eef5ff 28%,#245fca 37%,#071631 53%,#4d8fff 72%,#dce9ff 80%,#173f91 100%); background-size:220% 100%; box-shadow:0 0 32px rgba(77,143,255,.28); animation:portrait-edge 5.5s ease-in-out infinite; }
+.portrait-frame::after { content:""; position:absolute; z-index:-1; inset:-14px; border:1px solid rgba(128,169,255,.22); border-radius:12px; transform:translate3d(9px,9px,-20px); animation:portrait-offset 4.8s ease-in-out infinite; }
+.portrait-field{position:absolute;z-index:-2;inset:-68px;width:calc(100% + 136px);height:calc(100% + 136px);pointer-events:none}
 .portrait-frame__media { position:absolute; z-index:1; inset:1px; overflow:hidden; border-radius:4px; background:#03050b; }
 .portrait-frame__media::after { content:""; position:absolute; z-index:1; inset:0; background:linear-gradient(110deg,transparent 24%,rgba(139,181,255,.12) 42%,transparent 58%); background-size:230% 100%; animation:portrait-light 6.5s ease-in-out infinite; pointer-events:none; }
 .portrait-photo { object-fit:cover; object-position:50% 50%; filter:saturate(.94) contrast(1.03); }

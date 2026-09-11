@@ -7,6 +7,7 @@ import { portfolio } from "@/data/portfolio";
 import { Reveal } from "./Reveal";
 import { Starfield } from "./Starfield";
 import { KineticCursor } from "./KineticCursor";
+import { PortraitField } from "./PortraitField";
 
 const navigation = [["about", "About"], ["work", "Work"], ["experience", "Experience"], ["education", "Education"]] as const;
 
@@ -136,6 +137,7 @@ export function PortfolioPage() {
         <div className="hero-stage">
           <h1 aria-label="Jay Chawla"><span>JAY</span><em>CHAWLA</em></h1>
           <figure className="portrait-frame">
+            <PortraitField />
             <div className="portrait-frame__media">
               <Image
                 className="portrait-photo"
