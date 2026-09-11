@@ -7,7 +7,7 @@ import { Reveal } from "./Reveal";
 import { Starfield } from "./Starfield";
 import { KineticCursor } from "./KineticCursor";
 
-const navigation = [["work", "Work"], ["experience", "Experience"], ["about", "About"]] as const;
+const navigation = [["about", "About"], ["work", "Work"], ["experience", "Experience"], ["education", "Education"]] as const;
 
 function Arrow() { return <span aria-hidden="true">↗</span>; }
 
@@ -62,15 +62,18 @@ export function PortfolioPage() {
         <p className="hero-role">AI/ML and software engineer in Singapore</p>
         <div className="hero-stage">
           <h1 aria-label="Jay Chawla"><span>JAY</span><em>CHAWLA</em></h1>
-          <figure className="portrait-placeholder">
-            <Image
-              className="portrait-photo"
-              src="/jay-chawla-portrait.png"
-              alt="Jay Chawla in front of the New York City skyline"
-              fill
-              priority
-              sizes="(max-width: 600px) 62vw, (max-width: 900px) 190px, 300px"
-            />
+          <figure className="portrait-frame">
+            <div className="portrait-frame__media">
+              <Image
+                className="portrait-photo"
+                src="/jay-chawla-portrait.png"
+                alt="Jay Chawla in front of the New York City skyline"
+                fill
+                priority
+                sizes="(max-width: 600px) 62vw, (max-width: 900px) 190px, 300px"
+              />
+            </div>
+            <i className="portrait-frame__spark" aria-hidden="true" />
           </figure>
         </div>
         <div className="hero-bottom">
@@ -81,6 +84,12 @@ export function PortfolioPage() {
           <div className="hero-actions"><a href="#work">View my work <Arrow /></a><a href={`mailto:${p.person.email}`}>Get in touch</a></div>
           <aside><strong>Currently</strong><span>MSc Computer Engineering at NUS</span><small>Open to meaningful engineering work</small></aside>
         </div>
+      </section>
+
+      <section id="about" className="about-section shell">
+        <Reveal><header className="section-header"><p>About</p><h2>Engineering breadth, backed by fundamentals.</h2></header></Reveal>
+        <div className="about-intro"><p>I work across machine learning, simulation, connected hardware, and full-stack software. The common thread is straightforward: understand the problem deeply, then build the clearest useful solution.</p></div>
+        <div className="skills-grid">{p.skillGroups.map((group) => <Reveal key={group.title}><article><h3>{group.title}</h3><ul>{group.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul></article></Reveal>)}</div>
       </section>
 
       <section id="work" className="work-section shell">
@@ -107,11 +116,14 @@ export function PortfolioPage() {
         </div>
       </section>
 
-      <section id="about" className="about-section shell">
-        <Reveal><header className="section-header"><p>About</p><h2>Engineering breadth, backed by fundamentals.</h2></header></Reveal>
-        <div className="about-intro"><p>I work across machine learning, simulation, connected hardware, and full-stack software. The common thread is straightforward: understand the problem deeply, then build the clearest useful solution.</p></div>
-        <div className="skills-grid">{p.skillGroups.map((group) => <Reveal key={group.title}><article><h3>{group.title}</h3><ul>{group.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul></article></Reveal>)}</div>
-        <div className="education-block"><h2>Education</h2>{p.education.map((education) => <article key={education.school}><div><strong>{education.mark}</strong></div><div><p>{education.period}</p><h3>{education.degree}</h3><h4>{education.school} · {education.location}</h4>{education.note && <span>{education.note}</span>}</div></article>)}</div>
+      <section id="education" className="education-section shell">
+        <Reveal><header className="section-header"><p>Education</p><h2>Where I built the foundation.</h2></header></Reveal>
+        <div className="education-block">{p.education.map((education) => <Reveal key={education.school}><article>
+          <div className="education-logo">
+            <Image src={education.logo} alt={education.logoAlt} width={320} height={120} sizes="(max-width: 600px) 150px, 210px" />
+          </div>
+          <div><p>{education.period}</p><h3>{education.degree}</h3><h4>{education.school} · {education.location}</h4>{education.note && <span>{education.note}</span>}</div>
+        </article></Reveal>)}</div>
       </section>
 
       <section id="contact" className="contact-section shell">

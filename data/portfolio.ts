@@ -142,7 +142,8 @@ export const portfolio = {
       school: "National University of Singapore",
       location: "Singapore",
       period: "Aug 2025 — Present",
-      mark: "NUS",
+      logo: "/nus-logo.svg",
+      logoAlt: "National University of Singapore logo",
     },
     {
       degree: "Bachelor of Science in Computer Science and Engineering",
@@ -150,7 +151,8 @@ export const portfolio = {
       location: "Columbus, Ohio",
       period: "Jan 2022 — May 2025",
       note: "Artificial Intelligence specialisation · GPA 3.57 / 4.00",
-      mark: "OSU",
+      logo: "/ohio-state-logo.svg",
+      logoAlt: "The Ohio State University logo",
     },
   ],
 };
