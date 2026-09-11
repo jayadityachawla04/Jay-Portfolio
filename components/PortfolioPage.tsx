@@ -31,11 +31,11 @@ function ProjectVisual({ type }: { type: string }) {
   </div>;
   if (type === "analytics") return <div className="project-visual analytics procurement-visual" role="img" aria-label="Animated procurement intelligence dashboard showing spend, variance, anomalies, and model confidence">
     <div className="grid" aria-hidden="true" />
-    <div className="procurement-topbar" aria-hidden="true"><b>PROCUREMENT / LIVE</b><span><i /> 8 SOURCES CONNECTED</span></div>
+    <div className="procurement-topbar" aria-hidden="true"><b>Procurement intelligence</b><span><i /> 8 sources live</span></div>
     <div className="procurement-kpis" aria-hidden="true">
-      <div><small>SPEND COVERAGE</small><strong>92.4%</strong><em>+4.8%</em></div>
-      <div><small>PRICE VARIANCE</small><strong>3.18%</strong><em>↓ 0.7%</em></div>
-      <div><small>ANOMALIES</small><strong>14</strong><em>REVIEW</em></div>
+      <div><small>Spend coverage</small><strong>92.4%</strong><em>+4.8%</em></div>
+      <div><small>Price variance</small><strong>3.18%</strong><em>↓ 0.7%</em></div>
+      <div><small>Anomalies</small><strong>14</strong><em>Needs review</em></div>
     </div>
     <div className="procurement-chart" aria-hidden="true">
       <div className="procurement-axis"><span>120</span><span>80</span><span>40</span><span>0</span></div>
@@ -47,8 +47,8 @@ function ProjectVisual({ type }: { type: string }) {
       </svg>
       <div className="procurement-scan" />
     </div>
-    <div className="procurement-feed" aria-hidden="true"><span><i /> PLANT 04 · UNIT-PRICE DEVIATION</span><strong>MODEL CONFIDENCE 94%</strong></div>
-    <span>Eight SAP sources · four predictive modules</span>
+    <div className="procurement-feed" aria-hidden="true"><span><i /> Flagged: Plant 04 / unit-price deviation</span><strong>94% confidence</strong></div>
+    <span>From eight SAP sources to four predictive models</span>
   </div>;
   if (type === "signal") return <div className="project-visual signal" aria-hidden="true"><div className="grid" /><div className="wave">{Array.from({ length: 13 }, (_, index) => <i key={index} />)}</div><span>Live anomaly detection</span></div>;
   if (type === "pareto") return <div className="project-visual pareto" aria-hidden="true"><div className="grid" /><div className="points">{[[12, 77], [23, 67], [35, 57], [49, 47], [62, 37], [75, 29], [88, 22]].map(([x, y], index) => <i key={index} style={{ left: `${x}%`, top: `${y}%` }} />)}</div><span>Multi-objective Pareto front</span></div>;
