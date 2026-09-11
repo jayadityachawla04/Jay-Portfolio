@@ -32,17 +32,15 @@ main::before { content:""; position:fixed; z-index:-1; inset:0; background:radia
 .hero h1 { margin:0; min-width:0; font-size:clamp(112px,16.6vw,235px); line-height:.68; letter-spacing:-.085em; font-family:Arial,Helvetica,sans-serif; font-weight:700; }
 .hero h1 span,.hero h1 em { display:block; }
 .hero h1 em { margin-left:16%; color:transparent; -webkit-text-stroke:1px rgba(241,243,239,.82); font-family:Georgia,"Times New Roman",serif; font-size:.76em; font-weight:400; line-height:.86; }
-.portrait-frame { position:relative; margin:0; align-self:center; aspect-ratio:4/5; isolation:isolate; border-radius:48% 48% 24px 24px; filter:drop-shadow(0 30px 55px rgba(0,0,0,.58)); animation:portrait-float 6s ease-in-out infinite; }
-.portrait-frame::before { content:""; position:absolute; z-index:-1; inset:-5px; border-radius:inherit; background:conic-gradient(from var(--portrait-angle),#071633 0 18%,#4d8fff 27%,#dce9ff 31%,#17489f 37%,#061126 48% 68%,#80a9ff 76%,#fff 79%,#1e58c4 84%,#071633 94%); box-shadow:0 0 0 1px rgba(128,169,255,.2); animation:portrait-spectrum 7s linear infinite; }
-.portrait-frame::after { content:""; position:absolute; z-index:-2; inset:-17px; border-radius:50% 50% 34px 34px; background:conic-gradient(from var(--portrait-angle),transparent 5%,rgba(77,143,255,.08) 18%,rgba(128,169,255,.62) 27%,transparent 39% 63%,rgba(31,89,211,.45) 76%,transparent 90%); filter:blur(16px); opacity:.75; animation:portrait-spectrum 9s linear infinite reverse,portrait-breathe 3.6s ease-in-out infinite; }
-.portrait-frame__media { position:absolute; z-index:1; inset:1px; overflow:hidden; border-radius:inherit; background:#03050b; }
-.portrait-frame__media::after { content:""; position:absolute; z-index:1; inset:0; background:linear-gradient(115deg,transparent 15%,rgba(121,169,255,.14) 35%,transparent 52%),linear-gradient(180deg,rgba(15,44,102,.04),transparent 42%,rgba(1,2,7,.38)); background-size:220% 100%,100% 100%; animation:portrait-light 6.5s ease-in-out infinite; pointer-events:none; }
-.portrait-photo { object-fit:cover; object-position:50% 50%; filter:saturate(.9) contrast(1.04); animation:portrait-zoom 9s ease-in-out infinite alternate; }
-@keyframes portrait-spectrum { to { --portrait-angle:360deg; } }
-@keyframes portrait-breathe { 0%,100%{opacity:.38;transform:scale(.96)} 50%{opacity:.92;transform:scale(1.04)} }
-@keyframes portrait-float { 0%,100%{transform:translateY(0) rotate(-.35deg)} 50%{transform:translateY(-8px) rotate(.35deg)} }
-@keyframes portrait-light { 0%,15%{background-position:120% 0,0 0} 70%,100%{background-position:-110% 0,0 0} }
-@keyframes portrait-zoom { to{transform:scale(1.035)} }
+.portrait-frame { position:relative; margin:0; align-self:center; aspect-ratio:4/3; isolation:isolate; border-radius:6px; filter:drop-shadow(0 26px 48px rgba(0,0,0,.5)); }
+.portrait-frame::before { content:""; position:absolute; z-index:-1; inset:-4px; border-radius:8px; background:linear-gradient(115deg,#173f91 0%,#78a8ff 20%,#eef5ff 28%,#245fca 37%,#071631 53%,#4d8fff 72%,#dce9ff 80%,#173f91 100%); background-size:220% 100%; box-shadow:0 0 26px rgba(77,143,255,.24); animation:portrait-edge 5.5s ease-in-out infinite; }
+.portrait-frame::after { content:""; position:absolute; z-index:-2; inset:-12px; border:1px solid rgba(128,169,255,.3); border-radius:10px; transform:translate(11px,11px); animation:portrait-offset 4.8s ease-in-out infinite; }
+.portrait-frame__media { position:absolute; z-index:1; inset:1px; overflow:hidden; border-radius:4px; background:#03050b; }
+.portrait-frame__media::after { content:""; position:absolute; z-index:1; inset:0; background:linear-gradient(110deg,transparent 24%,rgba(139,181,255,.12) 42%,transparent 58%); background-size:230% 100%; animation:portrait-light 6.5s ease-in-out infinite; pointer-events:none; }
+.portrait-photo { object-fit:cover; object-position:50% 50%; filter:saturate(.94) contrast(1.03); }
+@keyframes portrait-edge { 0%,100%{background-position:0 0} 50%{background-position:100% 0} }
+@keyframes portrait-offset { 0%,100%{transform:translate(11px,11px);opacity:.35} 50%{transform:translate(7px,7px);opacity:.8} }
+@keyframes portrait-light { 0%,15%{background-position:120% 0} 70%,100%{background-position:-110% 0} }
 .hero-bottom { display:grid; grid-template-columns:1.45fr .55fr; gap:80px; align-items:end; }
 .hero-bottom h2 { max-width:580px; margin:0; font-size:clamp(30px,3.2vw,48px); line-height:1.03; letter-spacing:-.045em; font-weight:600; }
 .hero-bottom > div:first-child > p { max-width:560px; margin:20px 0 0; color:var(--muted); font-size:17px; line-height:1.65; }
