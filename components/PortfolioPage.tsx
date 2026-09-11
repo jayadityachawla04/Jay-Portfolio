@@ -72,8 +72,12 @@ export function PortfolioPage() {
                 priority
                 sizes="(max-width: 600px) 62vw, (max-width: 900px) 190px, 300px"
               />
+              <span className="portrait-frame__scan" aria-hidden="true" />
             </div>
             <i className="portrait-frame__spark" aria-hidden="true" />
+            <span className="portrait-frame__corner portrait-frame__corner--tl" aria-hidden="true" />
+            <span className="portrait-frame__corner portrait-frame__corner--br" aria-hidden="true" />
+            <figcaption><span>PORTRAIT / 01</span><i>ACTIVE</i></figcaption>
           </figure>
         </div>
         <div className="hero-bottom">
@@ -81,7 +85,6 @@ export function PortfolioPage() {
             <h2>I turn complex data into systems people can actually use.</h2>
             <p>{p.person.intro}</p>
           </div>
-          <div className="hero-actions"><a href="#work">View my work <Arrow /></a><a href={`mailto:${p.person.email}`}>Get in touch</a></div>
           <aside><strong>Currently</strong><span>MSc Computer Engineering at NUS</span><small>Open to meaningful engineering work</small></aside>
         </div>
       </section>
@@ -89,7 +92,10 @@ export function PortfolioPage() {
       <section id="about" className="about-section shell">
         <Reveal><header className="section-header"><p>About</p><h2>Engineering breadth, backed by fundamentals.</h2></header></Reveal>
         <div className="about-intro"><p>I work across machine learning, simulation, connected hardware, and full-stack software. The common thread is straightforward: understand the problem deeply, then build the clearest useful solution.</p></div>
-        <div className="skills-grid">{p.skillGroups.map((group) => <Reveal key={group.title}><article><h3>{group.title}</h3><ul>{group.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul></article></Reveal>)}</div>
+        <div className="capability-list">{p.skillGroups.map((group, index) => <Reveal key={group.title}><article className="capability">
+          <div className="capability-heading"><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{group.title}</h3><p>{group.description}</p></div></div>
+          <ul>{group.skills.map((skill) => <li key={skill}>{skill}</li>)}</ul>
+        </article></Reveal>)}</div>
       </section>
 
       <section id="work" className="work-section shell">
@@ -110,6 +116,7 @@ export function PortfolioPage() {
         <div className="shell">
           <Reveal><header className="section-header"><p>Experience</p><h2>Work that shipped, taught, or discovered something.</h2></header></Reveal>
           <div className="experience-list">{p.experience.map((job) => <Reveal key={`${job.company}-${job.role}`}><article className="experience">
+            <div className="experience-brand"><Image src={job.logo} alt={job.logoAlt} width={264} height={80} sizes="(max-width: 600px) 140px, 160px" /></div>
             <div className="experience-heading"><p>{job.period}</p><h3>{job.role}</h3><h4>{job.company} · {job.location}</h4></div>
             <div className="experience-content"><p>{job.summary}</p>{job.bullets.length > 0 && <ul>{job.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}</div>
           </article></Reveal>)}</div>

@@ -29,6 +29,8 @@ export const portfolio = {
       location: "Digital Transformation",
       period: "Jun 2025 — Aug 2025",
       summary: "Built an ML-powered procurement intelligence workflow on SAP purchase-to-pay data.",
+      logo: "/ey-logo.svg",
+      logoAlt: "EY logo",
       bullets: [
         "Developed a procurement spend analyzer with Python, Streamlit, Rasa, scikit-learn, and data from eight SAP source tables.",
         "Engineered four ML modules for unit-price prediction, inflation analysis, plant-wise price variation, and low-value purchase anomaly detection.",
@@ -42,6 +44,8 @@ export const portfolio = {
       location: "The Ohio State University",
       period: "May 2024 — May 2025",
       summary: "Applied NLP and unsupervised learning to large-scale legal and political-science datasets.",
+      logo: "/ohio-state-logo.svg",
+      logoAlt: "The Ohio State University logo",
       bullets: [
         "Analysed 90,000+ Supreme Court documents for NSF-funded research.",
         "Used PCA, K-Means, hierarchical clustering, Guided LDA, and topic modelling to identify document patterns.",
@@ -55,6 +59,8 @@ export const portfolio = {
       location: "The Ohio State University",
       period: "Aug 2024 — Nov 2024",
       summary: "Created a Python order-tracking application used across two first-year engineering courses.",
+      logo: "/ohio-state-logo.svg",
+      logoAlt: "The Ohio State University logo",
       bullets: ["Automated validation, request organisation, and status tracking for recurring student project orders."],
       accent: "orange",
     },
@@ -64,6 +70,8 @@ export const portfolio = {
       location: "The Ohio State University",
       period: "Sep 2023 — Jan 2024",
       summary: "Guided 50+ students through data structures, graphs, recursion, asymptotic analysis, and abstract data types.",
+      logo: "/ohio-state-logo.svg",
+      logoAlt: "The Ohio State University logo",
       bullets: [],
       accent: "violet",
     },
@@ -73,6 +81,8 @@ export const portfolio = {
       location: "Innovation programme",
       period: "Sep 2023 — Nov 2023",
       summary: "Mapped 15+ customer needs across three innovation sprints and supported AI-enabled improvement proposals.",
+      logo: "/ohio-state-logo.svg",
+      logoAlt: "The Ohio State University logo",
       bullets: [],
       accent: "blue",
     },
@@ -124,14 +134,17 @@ export const portfolio = {
   skillGroups: [
     {
       title: "Machine Learning & AI",
+      description: "Models, experiments, and intelligent systems built from messy real-world data.",
       skills: ["scikit-learn", "NumPy", "pandas", "Regression", "Classification", "Clustering", "PCA", "K-Means", "Naive Bayes", "Guided LDA", "Reinforcement Learning", "Policy Optimisation", "NSGA-II", "Anomaly Detection"],
     },
     {
       title: "Engineering & Data",
+      description: "The production layer: software, interfaces, APIs, search, and data pipelines.",
       skills: ["Python", "SQL", "JavaScript", "React", "Node.js", "REST APIs", "Elasticsearch", "Streamlit", "Rasa", "Git"],
     },
     {
       title: "IoT & Simulation",
+      description: "Connected hardware and simulated environments for systems that sense and move.",
       skills: ["Isaac Lab", "MuJoCo", "MATLAB", "Arduino", "ESP32", "MicroPython", "MQTT", "ThingSpeak"],
     },
   ],
