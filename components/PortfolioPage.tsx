@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import type { CSSProperties } from "react";
 import { useEffect, useState } from "react";
 import { portfolio } from "@/data/portfolio";
 import { Reveal } from "./Reveal";
@@ -28,7 +29,27 @@ function ProjectVisual({ type }: { type: string }) {
     <div className="robot-video__hud" aria-hidden="true"><b>UNITREE GO2</b><i>ROUGH TERRAIN</i><em>SIM / 01</em></div>
     <span>Isaac Lab · single-agent terrain rollout</span>
   </div>;
-  if (type === "analytics") return <div className="project-visual analytics" aria-hidden="true"><div className="grid" /><div className="bars">{[45, 66, 52, 82, 63, 91, 74, 86].map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}</div><span>Eight data sources · Four ML models</span></div>;
+  if (type === "analytics") return <div className="project-visual analytics procurement-visual" role="img" aria-label="Animated procurement intelligence dashboard showing spend, variance, anomalies, and model confidence">
+    <div className="grid" aria-hidden="true" />
+    <div className="procurement-topbar" aria-hidden="true"><b>PROCUREMENT / LIVE</b><span><i /> 8 SOURCES CONNECTED</span></div>
+    <div className="procurement-kpis" aria-hidden="true">
+      <div><small>SPEND COVERAGE</small><strong>92.4%</strong><em>+4.8%</em></div>
+      <div><small>PRICE VARIANCE</small><strong>3.18%</strong><em>↓ 0.7%</em></div>
+      <div><small>ANOMALIES</small><strong>14</strong><em>REVIEW</em></div>
+    </div>
+    <div className="procurement-chart" aria-hidden="true">
+      <div className="procurement-axis"><span>120</span><span>80</span><span>40</span><span>0</span></div>
+      <div className="procurement-bars">{[48, 67, 55, 79, 64, 88, 72, 84].map((height, index) => <i key={index} style={{ "--bar-height": `${height}%` } as CSSProperties} />)}</div>
+      <svg className="procurement-line" viewBox="0 0 700 150" preserveAspectRatio="none">
+        <path className="procurement-line__glow" d="M12 126 C82 112 102 74 186 88 S292 120 372 62 S486 78 548 40 S632 48 688 18" />
+        <path className="procurement-line__stroke" d="M12 126 C82 112 102 74 186 88 S292 120 372 62 S486 78 548 40 S632 48 688 18" />
+        {[126, 88, 62, 40, 18].map((y, index) => <circle key={index} cx={[12, 186, 372, 548, 688][index]} cy={y} r="4" />)}
+      </svg>
+      <div className="procurement-scan" />
+    </div>
+    <div className="procurement-feed" aria-hidden="true"><span><i /> PLANT 04 · UNIT-PRICE DEVIATION</span><strong>MODEL CONFIDENCE 94%</strong></div>
+    <span>Eight SAP sources · four predictive modules</span>
+  </div>;
   if (type === "signal") return <div className="project-visual signal" aria-hidden="true"><div className="grid" /><div className="wave">{Array.from({ length: 13 }, (_, index) => <i key={index} />)}</div><span>Live anomaly detection</span></div>;
   if (type === "pareto") return <div className="project-visual pareto" aria-hidden="true"><div className="grid" /><div className="points">{[[12, 77], [23, 67], [35, 57], [49, 47], [62, 37], [75, 29], [88, 22]].map(([x, y], index) => <i key={index} style={{ left: `${x}%`, top: `${y}%` }} />)}</div><span>Multi-objective Pareto front</span></div>;
   return <div className="project-visual map" aria-hidden="true"><div className="grid" /><div className="radar"><i /><i /><i /><b /></div><span>Five live signals · One view</span></div>;
