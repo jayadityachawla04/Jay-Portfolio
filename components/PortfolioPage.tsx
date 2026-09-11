@@ -86,7 +86,18 @@ function ProjectVisual({ type }: { type: string }) {
     <div className="pareto-legend" aria-hidden="true"><span><i /> Candidate designs</span><span><i /> Pareto frontier</span></div>
     <span>Cost and performance, balanced—not averaged</span>
   </div>;
-  return <div className="project-visual map" aria-hidden="true"><div className="grid" /><div className="radar"><i /><i /><i /><b /></div><span>Five live signals · One view</span></div>;
+  return <div className="project-visual map discovery-visual" role="img" aria-label="Animated local discovery app ranking nearby places using weather, crowd, cost, and distance signals">
+    <div className="discovery-header" aria-hidden="true"><b>What fits tonight?</b><span>Singapore · 7:42 PM</span></div>
+    <div className="discovery-search" aria-hidden="true"><i>⌕</i><span>Dinner under $25, somewhere quiet</span><b>↵</b></div>
+    <div className="discovery-signals" aria-hidden="true"><span>Clear · 27°</span><span>Low crowd</span><span>Open now</span><span>≤ 12 min</span></div>
+    <div className="discovery-results" aria-hidden="true">
+      <article className="discovery-result discovery-result--best"><em>01</em><div><b>Little Fern</b><small>Tiong Bahru · Modern Asian</small></div><span><strong>94</strong><small>match</small></span></article>
+      <article className="discovery-result"><em>02</em><div><b>Moonstone</b><small>Amoy Street · Café</small></div><span><strong>88</strong><small>match</small></span></article>
+      <article className="discovery-result"><em>03</em><div><b>Afterglow</b><small>Keong Saik · Plant-based</small></div><span><strong>84</strong><small>match</small></span></article>
+    </div>
+    <div className="discovery-reason" aria-hidden="true"><i /> Best fit: quiet now, 9-minute walk, within budget</div>
+    <span>Five live signals, ranked into one useful answer</span>
+  </div>;
 }
 
 export function PortfolioPage() {
