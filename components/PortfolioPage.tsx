@@ -21,12 +21,12 @@ function GitHubIcon() {
 
 function ProjectVisual({ type }: { type: string }) {
   if (type === "robot") return <div className="project-visual robot robot-video">
-    <video autoPlay loop muted playsInline preload="metadata" poster="/isaaclab-anymal-poster.png" aria-label="Isaac Lab quadruped robot locomotion simulation">
-      <source src="/isaaclab-anymal-walk.mp4" type="video/mp4" />
+    <video autoPlay loop muted playsInline preload="metadata" poster="/isaaclab-go2-poster.png" aria-label="Isaac Lab Unitree Go2 locomotion simulation">
+      <source src="/isaaclab-go2-walk.mp4" type="video/mp4" />
     </video>
     <div className="grid" aria-hidden="true" />
-    <div className="robot-video__hud" aria-hidden="true"><b>ANYMAL</b><i>POLICY ROLLOUT</i><em>SIM / 01</em></div>
-    <span>Isaac Lab · quadruped locomotion</span>
+    <div className="robot-video__hud" aria-hidden="true"><b>UNITREE GO2</b><i>POLICY ROLLOUT</i><em>SIM / 01</em></div>
+    <span>Isaac Lab · Go2 locomotion training</span>
   </div>;
   if (type === "analytics") return <div className="project-visual analytics" aria-hidden="true"><div className="grid" /><div className="bars">{[45, 66, 52, 82, 63, 91, 74, 86].map((height, index) => <i key={index} style={{ height: `${height}%` }} />)}</div><span>Eight data sources · Four ML models</span></div>;
   if (type === "signal") return <div className="project-visual signal" aria-hidden="true"><div className="grid" /><div className="wave">{Array.from({ length: 13 }, (_, index) => <i key={index} />)}</div><span>Live anomaly detection</span></div>;
