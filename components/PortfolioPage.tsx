@@ -145,12 +145,7 @@ export function PortfolioPage() {
                 priority
                 sizes="(max-width: 600px) 62vw, (max-width: 900px) 190px, 300px"
               />
-              <span className="portrait-frame__scan" aria-hidden="true" />
             </div>
-            <i className="portrait-frame__spark" aria-hidden="true" />
-            <span className="portrait-frame__corner portrait-frame__corner--tl" aria-hidden="true" />
-            <span className="portrait-frame__corner portrait-frame__corner--br" aria-hidden="true" />
-            <figcaption><span>PORTRAIT / 01</span><i>ACTIVE</i></figcaption>
           </figure>
         </div>
         <div className="hero-bottom">

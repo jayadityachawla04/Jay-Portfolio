@@ -32,25 +32,17 @@ main::before { content:""; position:fixed; z-index:-1; inset:0; background:radia
 .hero h1 { margin:0; min-width:0; font-size:clamp(112px,16.6vw,235px); line-height:.68; letter-spacing:-.085em; font-family:Arial,Helvetica,sans-serif; font-weight:700; }
 .hero h1 span,.hero h1 em { display:block; }
 .hero h1 em { margin-left:16%; color:transparent; -webkit-text-stroke:1px rgba(241,243,239,.82); font-family:Georgia,"Times New Roman",serif; font-size:.76em; font-weight:400; line-height:.86; }
-.portrait-frame { position:relative; margin:0; align-self:center; aspect-ratio:4/5; isolation:isolate; filter:drop-shadow(0 30px 55px rgba(0,0,0,.58)); }
-.portrait-frame::before { content:""; position:absolute; z-index:-1; inset:-5px; clip-path:polygon(22px 0,100% 0,100% calc(100% - 22px),calc(100% - 22px) 100%,0 100%,0 22px); background:conic-gradient(from var(--portrait-angle),#0b1f4a,transparent 9%,#4d8fff 18%,#fff 22%,#215ecf 27%,transparent 37% 58%,#173f91 66%,#a9c7ff 72%,#4d8fff 76%,transparent 87%); animation:portrait-spectrum 4.8s linear infinite; }
-.portrait-frame::after { content:""; position:absolute; z-index:-2; inset:-22px; clip-path:polygon(34px 0,100% 0,100% calc(100% - 34px),calc(100% - 34px) 100%,0 100%,0 34px); border:1px solid rgba(128,169,255,.28); box-shadow:0 0 0 1px rgba(17,55,129,.12),0 0 55px rgba(31,91,218,.16); animation:portrait-breathe 3.2s ease-in-out infinite; }
-.portrait-frame__media { position:absolute; z-index:1; inset:2px; overflow:hidden; clip-path:polygon(19px 0,100% 0,100% calc(100% - 19px),calc(100% - 19px) 100%,0 100%,0 19px); background:#03050b; }
-.portrait-frame__media::after { content:""; position:absolute; z-index:1; inset:0; background:linear-gradient(180deg,rgba(15,44,102,.08),transparent 38%,rgba(1,2,7,.34)); pointer-events:none; }
-.portrait-frame__scan { position:absolute; z-index:2; left:0; right:0; height:1px; top:10%; background:linear-gradient(90deg,transparent,#8bb4ff 20% 80%,transparent); box-shadow:0 0 16px rgba(77,143,255,.8); opacity:.62; animation:portrait-scan 5.5s cubic-bezier(.65,0,.35,1) infinite; }
-.portrait-frame__spark { position:absolute; z-index:4; width:8px; height:8px; border-radius:50%; background:#fff; box-shadow:0 0 8px #fff,0 0 21px #4d8fff,0 0 36px #4d8fff; offset-path:inset(-13px round 1px); animation:portrait-orbit 4.2s linear infinite; }
-.portrait-frame__corner { position:absolute; z-index:3; width:42px; height:42px; pointer-events:none; }
-.portrait-frame__corner--tl { top:-12px; left:-12px; border-top:2px solid #b8d0ff; border-left:2px solid #4d8fff; }
-.portrait-frame__corner--br { right:-12px; bottom:-12px; border-right:2px solid #4d8fff; border-bottom:2px solid #b8d0ff; }
-.portrait-frame figcaption { position:absolute; z-index:5; left:-14px; right:-14px; bottom:-42px; display:flex; align-items:center; justify-content:space-between; color:#94a1b8; font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:10px; letter-spacing:.13em; }
-.portrait-frame figcaption i { display:flex; align-items:center; gap:7px; color:#9dbaff; font-style:normal; }
-.portrait-frame figcaption i::before { content:""; width:5px; height:5px; border-radius:50%; background:#4d8fff; box-shadow:0 0 10px #4d8fff; animation:portrait-status 1.8s ease-in-out infinite; }
-.portrait-photo { object-fit:cover; object-position:50% 50%; filter:saturate(.9) contrast(1.04); }
+.portrait-frame { position:relative; margin:0; align-self:center; aspect-ratio:4/5; isolation:isolate; border-radius:48% 48% 24px 24px; filter:drop-shadow(0 30px 55px rgba(0,0,0,.58)); animation:portrait-float 6s ease-in-out infinite; }
+.portrait-frame::before { content:""; position:absolute; z-index:-1; inset:-5px; border-radius:inherit; background:conic-gradient(from var(--portrait-angle),#071633 0 18%,#4d8fff 27%,#dce9ff 31%,#17489f 37%,#061126 48% 68%,#80a9ff 76%,#fff 79%,#1e58c4 84%,#071633 94%); box-shadow:0 0 0 1px rgba(128,169,255,.2); animation:portrait-spectrum 7s linear infinite; }
+.portrait-frame::after { content:""; position:absolute; z-index:-2; inset:-17px; border-radius:50% 50% 34px 34px; background:conic-gradient(from var(--portrait-angle),transparent 5%,rgba(77,143,255,.08) 18%,rgba(128,169,255,.62) 27%,transparent 39% 63%,rgba(31,89,211,.45) 76%,transparent 90%); filter:blur(16px); opacity:.75; animation:portrait-spectrum 9s linear infinite reverse,portrait-breathe 3.6s ease-in-out infinite; }
+.portrait-frame__media { position:absolute; z-index:1; inset:1px; overflow:hidden; border-radius:inherit; background:#03050b; }
+.portrait-frame__media::after { content:""; position:absolute; z-index:1; inset:0; background:linear-gradient(115deg,transparent 15%,rgba(121,169,255,.14) 35%,transparent 52%),linear-gradient(180deg,rgba(15,44,102,.04),transparent 42%,rgba(1,2,7,.38)); background-size:220% 100%,100% 100%; animation:portrait-light 6.5s ease-in-out infinite; pointer-events:none; }
+.portrait-photo { object-fit:cover; object-position:50% 50%; filter:saturate(.9) contrast(1.04); animation:portrait-zoom 9s ease-in-out infinite alternate; }
 @keyframes portrait-spectrum { to { --portrait-angle:360deg; } }
-@keyframes portrait-breathe { 0%,100%{opacity:.38;transform:scale(.985)} 50%{opacity:.9;transform:scale(1.015)} }
-@keyframes portrait-orbit { to { offset-distance:100%; } }
-@keyframes portrait-scan { 0%,8%{top:6%;opacity:0} 18%{opacity:.65} 78%{opacity:.42} 90%,100%{top:94%;opacity:0} }
-@keyframes portrait-status { 50%{opacity:.32;transform:scale(.72)} }
+@keyframes portrait-breathe { 0%,100%{opacity:.38;transform:scale(.96)} 50%{opacity:.92;transform:scale(1.04)} }
+@keyframes portrait-float { 0%,100%{transform:translateY(0) rotate(-.35deg)} 50%{transform:translateY(-8px) rotate(.35deg)} }
+@keyframes portrait-light { 0%,15%{background-position:120% 0,0 0} 70%,100%{background-position:-110% 0,0 0} }
+@keyframes portrait-zoom { to{transform:scale(1.035)} }
 .hero-bottom { display:grid; grid-template-columns:1.45fr .55fr; gap:80px; align-items:end; }
 .hero-bottom h2 { max-width:580px; margin:0; font-size:clamp(30px,3.2vw,48px); line-height:1.03; letter-spacing:-.045em; font-weight:600; }
 .hero-bottom > div:first-child > p { max-width:560px; margin:20px 0 0; color:var(--muted); font-size:17px; line-height:1.65; }
