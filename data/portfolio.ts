@@ -1,0 +1,158 @@
+export const portfolio = {
+  person: {
+    name: "Jay Chawla",
+    initials: "JC",
+    role: "AI/ML Engineer",
+    secondaryRole: "Software Engineer",
+    location: "Singapore",
+    headline: "I build intelligent systems from data to deployment.",
+    intro:
+      "Computer engineering graduate student working across machine learning, data systems, robotics simulation, and full-stack development.",
+    email: "jayadityachawla04@gmail.com",
+    phone: "+65 8791 1565",
+    resumePath: "/resume.pdf",
+    linkedin: "https://www.linkedin.com/in/jaychawlaosu",
+    github: "https://github.com/JayC0401",
+  },
+
+  highlights: [
+    { value: "90K+", label: "legal documents analysed" },
+    { value: "4", label: "ML analytics modules shipped" },
+    { value: "1K+", label: "procurement records consolidated" },
+    { value: "50+", label: "students supported" },
+  ],
+
+  experience: [
+    {
+      role: "Technology Consulting Intern",
+      company: "Ernst & Young",
+      location: "Digital Transformation",
+      period: "Jun 2025 — Aug 2025",
+      summary: "Built an ML-powered procurement intelligence workflow on SAP purchase-to-pay data.",
+      bullets: [
+        "Developed a procurement spend analyzer with Python, Streamlit, Rasa, scikit-learn, and data from eight SAP source tables.",
+        "Engineered four ML modules for unit-price prediction, inflation analysis, plant-wise price variation, and low-value purchase anomaly detection.",
+        "Consolidated 1,000+ records to power 10+ dashboard charts, tables, and chatbot responses.",
+      ],
+      accent: "blue",
+    },
+    {
+      role: "Research Assistant",
+      company: "American Institutions and Methodology Lab",
+      location: "The Ohio State University",
+      period: "May 2024 — May 2025",
+      summary: "Applied NLP and unsupervised learning to large-scale legal and political-science datasets.",
+      bullets: [
+        "Analysed 90,000+ Supreme Court documents for NSF-funded research.",
+        "Used PCA, K-Means, hierarchical clustering, Guided LDA, and topic modelling to identify document patterns.",
+        "Maintained 10+ reusable data-cleaning and visualisation scripts for reproducible research.",
+      ],
+      accent: "lime",
+    },
+    {
+      role: "Lab Assistant",
+      company: "Engineering Education Department Lab",
+      location: "The Ohio State University",
+      period: "Aug 2024 — Nov 2024",
+      summary: "Created a Python order-tracking application used across two first-year engineering courses.",
+      bullets: ["Automated validation, request organisation, and status tracking for recurring student project orders."],
+      accent: "orange",
+    },
+    {
+      role: "Undergraduate Teaching Assistant",
+      company: "CSE 2321",
+      location: "The Ohio State University",
+      period: "Sep 2023 — Jan 2024",
+      summary: "Guided 50+ students through data structures, graphs, recursion, asymptotic analysis, and abstract data types.",
+      bullets: [],
+      accent: "violet",
+    },
+    {
+      role: "Innovation Analyst Intern",
+      company: "OSU × Honda",
+      location: "Innovation programme",
+      period: "Sep 2023 — Nov 2023",
+      summary: "Mapped 15+ customer needs across three innovation sprints and supported AI-enabled improvement proposals.",
+      bullets: [],
+      accent: "blue",
+    },
+  ],
+
+  projects: [
+    {
+      index: "01",
+      title: "Learning-Based Locomotion Control",
+      meta: "NUS · 2026 — PRESENT",
+      description: "Developing reinforcement-learning and policy-optimisation controllers for quadruped and humanoid locomotion in Isaac Lab and MuJoCo.",
+      tags: ["Reinforcement Learning", "Isaac Lab", "MuJoCo", "Robotics"],
+      visual: "robot",
+    },
+    {
+      index: "02",
+      title: "Procurement Intelligence",
+      meta: "ERNST & YOUNG · 2025",
+      description: "Four machine-learning analytics modules and a conversational interface built on procurement data spanning eight source tables.",
+      tags: ["Python", "scikit-learn", "Streamlit", "Rasa", "SAP"],
+      visual: "analytics",
+    },
+    {
+      index: "03",
+      title: "IoT Failure Detection",
+      meta: "NUS · 2026",
+      description: "An ESP32 and MicroPython monitoring pipeline using MQTT, ThingSpeak, and MATLAB to classify normal and failure states.",
+      tags: ["ESP32", "MicroPython", "MQTT", "MATLAB"],
+      visual: "signal",
+    },
+    {
+      index: "04",
+      title: "Multi-Objective Optimisation",
+      meta: "NUS · 2025",
+      description: "NSGA-II across four benchmark and engineering problems, including a three-objective crashworthiness model with five design variables.",
+      tags: ["NSGA-II", "Optimisation", "Pareto Fronts", "Python"],
+      visual: "pareto",
+    },
+    {
+      index: "05",
+      title: "Local Discovery Platform",
+      meta: "OSU CAPSTONE · 2025",
+      description: "A Yelp-style discovery platform combining dining, events, weather, cost, and crowd signals through real-time services and Elasticsearch.",
+      tags: ["Python", "Node.js", "Elasticsearch", "REST APIs"],
+      visual: "map",
+    },
+  ],
+
+  skillGroups: [
+    {
+      title: "Machine Learning & AI",
+      skills: ["scikit-learn", "NumPy", "pandas", "Regression", "Classification", "Clustering", "PCA", "K-Means", "Naive Bayes", "Guided LDA", "Reinforcement Learning", "Policy Optimisation", "NSGA-II", "Anomaly Detection"],
+    },
+    {
+      title: "Engineering & Data",
+      skills: ["Python", "SQL", "JavaScript", "React", "Node.js", "REST APIs", "Elasticsearch", "Streamlit", "Rasa", "Git"],
+    },
+    {
+      title: "IoT & Simulation",
+      skills: ["Isaac Lab", "MuJoCo", "MATLAB", "Arduino", "ESP32", "MicroPython", "MQTT", "ThingSpeak"],
+    },
+  ],
+
+  education: [
+    {
+      degree: "Master of Science in Computer Engineering",
+      school: "National University of Singapore",
+      location: "Singapore",
+      period: "Aug 2025 — Present",
+      mark: "NUS",
+    },
+    {
+      degree: "Bachelor of Science in Computer Science and Engineering",
+      school: "The Ohio State University",
+      location: "Columbus, Ohio",
+      period: "Jan 2022 — May 2025",
+      note: "Artificial Intelligence specialisation · GPA 3.57 / 4.00",
+      mark: "OSU",
+    },
+  ],
+};
+
+export type PortfolioData = typeof portfolio;
