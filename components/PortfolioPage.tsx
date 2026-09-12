@@ -9,7 +9,7 @@ import { Starfield } from "./Starfield";
 import { KineticCursor } from "./KineticCursor";
 import { PortraitField } from "./PortraitField";
 
-const navigation = [["about", "About"], ["work", "Work"], ["experience", "Experience"], ["education", "Education"]] as const;
+const navigation = [["about", "About"], ["work", "Work"], ["opensource", "Open source"], ["experience", "Experience"], ["education", "Education"]] as const;
 
 function Arrow() { return <span aria-hidden="true">↗</span>; }
 
@@ -179,6 +179,19 @@ export function PortfolioPage() {
           </div>
           <ProjectVisual type={project.visual} />
           <span className="project-number">{String(index + 1).padStart(2, "0")}</span>
+        </article></Reveal>)}</div>
+      </section>
+
+      <section id="opensource" className="repository-section shell">
+        <Reveal><header className="section-header"><p>Open source</p><h2>Systems built to be opened, tested, and used.</h2></header></Reveal>
+        <div className="repository-grid">{p.repositories.map((repository, index) => <Reveal key={repository.name}><article className="repository-card">
+          <div className="repository-card__top"><span>{String(index + 1).padStart(2, "0")}</span><small>Public repository</small></div>
+          <div className="repository-card__signal" aria-hidden="true">{Array.from({ length: 6 }, (_, signal) => <i key={signal} />)}</div>
+          <p>{repository.eyebrow}</p>
+          <h3>{repository.name}</h3>
+          <div className="repository-card__description">{repository.description}</div>
+          <ul>{repository.stack.map((technology) => <li key={technology}>{technology}</li>)}</ul>
+          <a href={repository.url} target="_blank" rel="noreferrer">Explore the code <Arrow /></a>
         </article></Reveal>)}</div>
       </section>
 

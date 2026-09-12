@@ -131,6 +131,58 @@ export const portfolio = {
     },
   ],
 
+  repositories: [
+    {
+      name: "Pathloom Studio",
+      eyebrow: "Observability · 2026",
+      description: "A local-first OpenTelemetry trace and log viewer with OTLP JSON and Protobuf ingestion, live SSE updates, service maps, and a custom trace waterfall.",
+      stack: ["SvelteKit 5", "TypeScript", "OpenTelemetry", "SSE"],
+      url: "https://github.com/jayadityachawla04/Pathloom-Studio",
+    },
+    {
+      name: "NavForge",
+      eyebrow: "Browser agents · 2026",
+      description: "A repeatable browser-agent workspace that runs natural-language web tasks, records trajectories and screenshots, and turns successful runs into reusable skills.",
+      stack: ["Python", "Playwright", "Pydantic", "Typer"],
+      url: "https://github.com/jayadityachawla04/Navigation_Agent",
+    },
+    {
+      name: "Generative Diffusion Lab",
+      eyebrow: "Generative AI · 2026",
+      description: "Two end-to-end MNIST diffusion implementations: a custom UNet built from scratch and a scheduler-driven DDPM baseline using Hugging Face Diffusers.",
+      stack: ["PyTorch", "Diffusers", "Computer Vision", "DDPM"],
+      url: "https://github.com/jayadityachawla04/Generative-Diffusion-Lab",
+    },
+    {
+      name: "StratForge",
+      eyebrow: "Quant systems · 2026",
+      description: "A full-stack strategy backtester with five technical strategies, real market data, execution without look-ahead bias, and detailed risk and return metrics.",
+      stack: ["React", "FastAPI", "pandas", "TradingView"],
+      url: "https://github.com/jayadityachawla04/StratForge",
+    },
+    {
+      name: "Sentinel Forge",
+      eyebrow: "Cybersecurity · 2026",
+      description: "A multi-agent security triage system that coordinates log, threat-intelligence, phishing, risk-scoring, and reporting agents into an explainable investigation.",
+      stack: ["LangGraph", "FastAPI", "Next.js", "OpenSearch"],
+      url: "https://github.com/jayadityachawla04/cyber-triage-agents",
+    },
+    {
+      name: "ContextForge",
+      eyebrow: "AI infrastructure · 2026",
+      description: "A modular MCP server workbench that gives AI clients controlled access to files, Git repositories, memory, web retrieval, time utilities, and protocol examples.",
+      stack: ["TypeScript", "MCP", "Node.js", "Knowledge Graphs"],
+      url: "https://github.com/jayadityachawla04/MCP-ContextMesh",
+    },
+    {
+      name: "Agentic CI Reviewer",
+      eyebrow: "Developer tooling · 2026",
+      description: "A local code-review service with queued review runs, persisted findings, rule-based quality gates, replayable fixtures, and an evaluation harness.",
+      stack: ["Python", "FastAPI", "SQLAlchemy", "CI/CD"],
+      url: "https://github.com/jayadityachawla04/agentic-ci-reviewer",
+    },
+  ],
+
   skillGroups: [
     {
       title: "Machine Learning & AI",
